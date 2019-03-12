@@ -78,22 +78,22 @@ git clone "https://github.com/dosssman/serverstatus_nodejs.git" "/opt/serverstat
 mv "/opt/serverstatus_nodejs/serverinfo_restapi" "/opt/serverinfo_restapi"
 rm -rf "/opt/serverstatus_nodejs"
 
-# # Install server App
-# npm install --prefix /opt/serverinfo_restapi /opt/serverinfo_restapi
-#
-# # Create Service and forward necessary command
-# if [ "${OS}" == "Ubuntu" ] ; then
-#   ln -s /opt/serverinfo_restapi/serverinfo_restapi_ubuntu.service /etc/systemd/system/serverinfo_restapi.service
-# fi
-# if [ "${OS}" == "CentOS Linux" ] ; then
-#   ln -s /opt/serverinfo_restapi/serverinfo_restapi_centos.service /etc/systemd/system/serverinfo_restapi.service
-# fi
-#
-# #Opening necessary port
-# if [ -f "/usr/bin/firewall-cmd"]; then
-#   firewall-cmd --zone=public --add-port=9701/tcp --permanent
-# fi
-#
-# # Enable and start service
-# systemctl enable serverinfo_restapi
-# systemctl start serverinfo_restapi
+# Install server App
+npm install --prefix /opt/serverinfo_restapi /opt/serverinfo_restapi
+
+# Create Service and forward necessary command
+if [ "${OS}" == "Ubuntu" ] ; then
+  ln -s "/opt/serverinfo_restapi/serverinfo_restapi_ubuntu.service" "/etc/systemd/system/serverinfo_restapi.service"
+fi
+if [ "${OS}" == "CentOS Linux" ] ; then
+  ln -s "/opt/serverinfo_restapi/serverinfo_restapi_centos.service" "/etc/systemd/system/serverinfo_restapi.service"
+fi
+
+#Opening necessary port
+if [ -f "/usr/bin/firewall-cmd" ]; then
+  firewall-cmd --zone=public --add-port=9701/tcp --permanent
+fi
+
+# Enable and start service
+systemctl enable serverinfo_restapi
+systemctl start serverinfo_restapi
