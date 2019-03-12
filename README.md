@@ -2,7 +2,7 @@
 
 CS24構内GPUサーバー監視用ウエブアプリ
 
-#　利用方法
+# 利用方法
 
 ウエブブラウザーで[Insert local address  here]にアクセスする
 可視化は共有サーバーに制限されているが…
@@ -21,7 +21,7 @@ CS24構内GPUサーバー監視用ウエブアプリ
 
 ### インストール方法
 
-# Improvment (?)
+# Improvement (?)
 - Optimize variables mgmt in central monitor app
 - Collapse Storage Info
 - Badge close to "Online" to signlal harddrive critical condition
