@@ -1,0 +1,7 @@
+{
+  "ip_prefix": "<common_ip_prefix_here>",
+
+  "servers": [
+    { "hostname": "<hostname_1_here>", "ip_suffix": "<ip_suffix_here>", "type": "gpu"}
+  ]
+}

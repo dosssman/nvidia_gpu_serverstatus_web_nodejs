@@ -1,0 +1,18 @@
+{
+  "name": "serverinfo_restapi",
+  "version": "1.0.0",
+  "description": "REST API for GPU Status Information",
+  "main": "serverinfo_restapi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Rousslan Fernand Julien Dossa",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "systeminformation": "^4.0.15",
+    "util": "^0.11.1",
+    "xml2js": "^0.4.19"
+  }
+}
