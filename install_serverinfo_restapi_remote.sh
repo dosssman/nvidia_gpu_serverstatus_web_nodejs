@@ -74,14 +74,20 @@ fi
 
 echo .
 echo "Cloning serverinfo_restapi to /opt/serverinfo_restapi"
+if [ -f "/opt/serverinfo_restapi" ]; then
+  rm -rf "/opt/serverinfo_restapi"
+fi
 git clone "https://github.com/dosssman/serverstatus_nodejs.git" "/opt/serverstatus_nodejs"
-mv "/opt/serverstatus_nodejs/serverinfo_restapi" "/opt/serverinfo_restapi"
+mv "/opt/serverstatus_nodejs/serverinfo_restapi" "/opt/."
 rm -rf "/opt/serverstatus_nodejs"
 
 # Install server App
 npm install --prefix /opt/serverinfo_restapi /opt/serverinfo_restapi
 
 # Create Service and forward necessary command
+if [ -f "/etc/systemd/system/serverinfo_restapi.service" ]; then
+  rm -rf "/etc/systemd/system/serverinfo_restapi.service"
+fi
 if [ "${OS}" == "Ubuntu" ] ; then
   ln -s "/opt/serverinfo_restapi/serverinfo_restapi_ubuntu.service" "/etc/systemd/system/serverinfo_restapi.service"
 fi
