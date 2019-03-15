@@ -94,5 +94,5 @@ app.get( "/get_fsinfo", function( req, res) {
 // Add port parametrization at app launch
 var port = 9701;
 const server = app.listen( port, "0.0.0.0", function() {
-  console.log( "Server status running ...");
+  console.log( "Server status Info REST API is running ...");
 });

@@ -74,7 +74,7 @@ fi
 
 echo .
 echo "Cloning serverinfo_restapi to /opt/serverinfo_restapi"
-if [ -f "/opt/serverinfo_restapi" ]; then
+if [ -d "/opt/serverinfo_restapi" ]; then
   rm -rf "/opt/serverinfo_restapi"
 fi
 git clone "https://github.com/dosssman/serverstatus_nodejs.git" "/opt/serverstatus_nodejs"
@@ -101,5 +101,6 @@ if [ -f "/usr/bin/firewall-cmd" ]; then
 fi
 
 # Enable and start service
+systemctl daemon-reload
 systemctl enable serverinfo_restapi
 systemctl start serverinfo_restapi

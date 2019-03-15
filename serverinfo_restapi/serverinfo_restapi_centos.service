@@ -2,14 +2,13 @@
 Description="ServerInfo RESTAPI Service"
 
 [Service]
-ExecStart=/opt/serverinfo_restapi/app.js
+ExecStart=/usr/bin/node /opt/serverinfo_restapi/app.js
 Restart=always
 User=nobody
 Group=nobody
 Environment=PATH=/usr/bin:/usr/local/bin
 Environment=NODE_ENV=production
 WorkingDirectory=/opt/serverinfo_restapi
-Description="Provides a REST API to query machine status"
 
 [Install]
 WantedBy=multi-user.target

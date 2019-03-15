@@ -1,0 +1,14 @@
+{
+  "name": "serverinfo_webserver",
+  "version": "1.0.0",
+  "description": "\"Web app Server for checking ServerStatus\"",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rousslan Fernand Julien Dossa",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

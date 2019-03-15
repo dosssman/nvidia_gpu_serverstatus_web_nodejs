@@ -1,0 +1,15 @@
+[Unit]
+Description="ServerInfo RESTAPI Web Server"
+
+[Service]
+ExecStart=/usr/bin/node /opt/serverinfo_webserver/main.js
+Restart=on-failure
+User=nobody
+Group=nobody
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/opt/serverinfo_webserver
+Description="Central Webserver monitoring ServerInfo through the REST API"
+
+[Install]
+WantedBy=multi-user.target
