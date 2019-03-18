@@ -1,4 +1,4 @@
-# Server Status with NodeJS
+# GPU Server Status Monitor with NodeJS (NVIDIA SMI Javascript Wrapper + Web Interface)
 
 Web Browser interface for GPU Server Monitoring
 ![Preview](https://github.com/dosssman/serverstatus_nodejs/raw/master/BrowserPreview.png)
@@ -50,3 +50,6 @@ Either:
 # Credits
 - NodeJS SystemInforation wrapper [insert link]
 - Bootstrap Admin Dashboard template [insert link]
+
+# Other
+- NVIDIA SMI Javascript Wrapper can be found in serverinfo_restapi/hw_info.js
