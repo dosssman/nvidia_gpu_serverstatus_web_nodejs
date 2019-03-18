@@ -90,7 +90,7 @@ echo "Cloning serverinfo_restapi to /opt/serverinfo_restapi"
 if [ -d "/opt/serverinfo_restapi" ]; then
   rm -rf "/opt/serverinfo_restapi"
 fi
-git clone "https://github.com/dosssman/serverstatus_nodejs.git" "/opt/serverstatus_nodejs"
+git clone "https://github.com/dosssman/nvidia_gpu_serverstatus_web_nodejs.git" "/opt/serverstatus_nodejs"
 mv "/opt/serverstatus_nodejs/serverinfo_restapi" "/opt/."
 rm -rf "/opt/serverstatus_nodejs"
 
