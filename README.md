@@ -1,11 +1,12 @@
 # Server Status with NodeJS
 
-Web Browserrt Interface for GPU Server Monitoring
+Web Browser interface for GPU Server Monitoring
+![Preview](https://github.com/dosssman/serverstatus_nodejs/raw/master/BrowserPreview.png)
 
 ## Usage
 
-Access the local ip addres / domain of the machine running "ServerInfo Webserver"
-module with a Web Browser (Tested on Chromium mainly)
+Access the local ip address / domain name of the machine running "ServerInfo Webserver"
+module with a Web Browser (Tested on Chromium)
 
 ## Server Info RESTAPI
 
@@ -26,14 +27,14 @@ Provide a Web Browser accessible interface to monitor GPU server status of machi
 where the "Server Info RESTAPI" counterpart is installed.
 
 ### Setup
-'''
-Copy the "serverinfo_webserver" sub module to desired location (/opt recommended)
-Make sure you have NodeJS >= 10 intalled  (Tested on 11.6 and 11.11 Arch Linux, Centos 7 and Ubuntu 16.04)
-Access the folder with a terminal and run "npm install" to install necessary dependencies
+```
+- Copy the "serverinfo_webserver" sub module to desired location (/opt recommended)
+- Make sure you have NodeJS >= 10 intalled  (Tested on 11.6 and 11.11 Arch Linux, Centos 7 and Ubuntu 16.04)
+- Access the folder with a terminal and run "npm install" to install necessary dependencies
 Either:
-- Run npm start directly from the directory (dirty as "killall nodejs" and similar command will stop the nodejs server, etc ...)
-- Copy the appropriate systemd service unit to "/etc/systemd/system/" and run "systemctl daemon-reload && systemctl start serverinfo_webserver"
-'''
+- Run "node main.js" directly from the directory (dirty, as "killall nodejs" and similar command will stop the nodejs server, etc ...)
+- Copy the appropriate systemd service unit file to "/etc/systemd/system/" and run "systemctl daemon-reload && systemctl enable serverinfo_webserver_XXX && systemctl start serverinfo_webserver_XXX"
+```
 
 # Improvement (?)
 - Easy to understand General / GPU Usage state summary
