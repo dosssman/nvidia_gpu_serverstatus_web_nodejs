@@ -3,6 +3,16 @@ const fs = require("fs"),
 
 const app = express();
 
+// Disable CORS
+app.use(function (req, res, next) {
+    // TODO Parametrized Central Motitor Server's address to allow CORS request
+    res.setHeader('Access-Control-Allow-Origin', "*");
+    res.setHeader('Access-Control-Allow-Methods', 'GET');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
+
 // Add port parametrization at app launch
 var port = 9700;
 app.use( "/", express.static("./tmplt/src"));

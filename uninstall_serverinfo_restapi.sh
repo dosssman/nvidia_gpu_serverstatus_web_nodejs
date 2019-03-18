@@ -4,14 +4,14 @@
 # echo $TARGET_DISTRIB
 
 USERNAME="root"
-HOSTS="servernames or ip adresses"
+HOSTS="servername"
 
 for REMOTE_HOSTNAME in ${HOSTS} ; do
     # Copy appropriate install script to remote srver
-    rsync -u "./install_serverinfo_restapi_remote.sh" ${USERNAME}@${REMOTE_HOSTNAME}:~/.
-    ssh -l ${USERNAME} ${REMOTE_HOSTNAME} "source ./install_serverinfo_restapi_remote.sh"
+    rsync -u "./uninstall_serverinfo_restapi_remote.sh" ${USERNAME}@${REMOTE_HOSTNAME}:~/. &> /dev/null
+    ssh -l ${USERNAME} ${REMOTE_HOSTNAME} "source ./uninstall_serverinfo_restapi_remote.sh"
 
     # Clean Up
     # Remove Distro detect script from remote server
-    ssh -l ${USERNAME} ${REMOTE_HOSTNAME} "rm ./install_serverinfo_restapi_remote.sh"
+    ssh -l ${USERNAME} ${REMOTE_HOSTNAME} "rm ./uninstall_serverinfo_restapi_remote.sh"
 done
